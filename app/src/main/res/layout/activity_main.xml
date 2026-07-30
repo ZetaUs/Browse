@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+    android:layout_height="match_parent"
+        tools:ignore="VisualLintSystemUi">
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/inputContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/inputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="输入网址或搜索关键词"
+            android:imeOptions="actionSearch"
+            android:inputType="textUri|textWebEditText"
+            android:background="@drawable/edittext_rounded"
+            android:padding="12dp"
+            tools:ignore="Autofill,HardcodedText,VisualLintTextFieldSize" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:background="#80000000"
+        android:padding="8dp"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/urlEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:hint="网址"
+            android:imeOptions="actionSearch"
+            android:inputType="textUri|textWebEditText"
+            android:background="@drawable/edittext_rounded"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:textColorHint="#999999"
+            tools:ignore="Autofill,HardcodedText,VisualLintTextFieldSize" />
+
+        <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_arrow_back"
+                android:contentDescription="后退"
+                android:background="@android:color/transparent"
+                android:visibility="gone"
+                tools:ignore="HardcodedText,ImageContrastCheck,TouchTargetSizeCheck" />
+
+        <ImageButton
+                android:id="@+id/forwardButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_arrow_forward"
+                android:contentDescription="前进"
+                android:background="@android:color/transparent"
+                android:visibility="gone"
+                tools:ignore="HardcodedText,ImageContrastCheck,TouchTargetSizeCheck" />
+
+        <ImageButton
+                android:id="@+id/refreshButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_refresh"
+                android:contentDescription="刷新"
+                android:background="@android:color/transparent"
+                tools:ignore="HardcodedText,ImageContrastCheck,TouchTargetSizeCheck" />
+
+        <ImageButton
+                android:id="@+id/homeButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_home"
+                android:contentDescription="主页"
+                android:background="@android:color/transparent"
+                tools:ignore="HardcodedText,ImageContrastCheck,TouchTargetSizeCheck" />
+
+    </LinearLayout>
+
+</FrameLayout>

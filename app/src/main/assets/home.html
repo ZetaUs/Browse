@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浏览器主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-image 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 风景图片列表（使用 Unsplash 随机风景图片）
+        const landscapeImages = [
+            'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1920&q=80',
+            'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1920&q=80',
+            'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=80',
+            'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1920&q=80',
+            'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1920&q=80',
+            'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&q=80',
+            'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=1920&q=80',
+            'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1920&q=80',
+            'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1920&q=80',
+            'https://images.unsplash.com/photo-1446329813274-7c9036bd9a1f?w=1920&q=80',
+            'https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1920&q=80',
+            'https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?w=1920&q=80',
+            'https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=1920&q=80',
+            'https://images.unsplash.com/photo-1490682143684-14369e18dce8?w=1920&q=80',
+            'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1920&q=80'
+        ];
+        
+        // 随机选择一张图片
+        const randomIndex = Math.floor(Math.random() * landscapeImages.length);
+        const selectedImage = landscapeImages[randomIndex];
+        
+        // 设置背景图片
+        document.body.style.backgroundImage = `url('${selectedImage}')`;
+        
+        // 可选：每 30 秒自动切换背景
+        setInterval(() => {
+            const newIndex = Math.floor(Math.random() * landscapeImages.length);
+            const newImage = landscapeImages[newIndex];
+            document.body.style.backgroundImage = `url('${newImage}')`;
+        }, 30000);
+    </script>
+</body>
+</html>
